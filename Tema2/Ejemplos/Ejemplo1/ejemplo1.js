@@ -3,15 +3,15 @@ document.getElementById("main-title").innerText =
 document.write("<h1>Hola Mundo con document.write</h1>"); // Escribe en el HTML
 console.log("Hola Mundo");
 
-// const nombre = prompt("Introduce tu nombre");
-// document.write(`<h1>Hola ${nombre}</h1>`); // Escribe en el HTML
+const nombre = prompt("Introduce tu nombre", "Gabriel");
+document.write(`<h1>Hola ${nombre}</h1>`); // Escribe en el HTML
 
-// const number = parseInt(prompt("Introduce un número entero"));
-// document.write(
-//   `<h2>El numero introducido sumandole 100 es ${number + 100}</h2> `
-// );
+const number = parseInt(prompt("Introduce un número entero", 2));
+document.write(
+  `<h2>El numero introducido sumandole 100 es ${number + 100}</h2> `
+);
 
-// console.log(number);
+console.log(number);
 
 const res = confirm("¿Te gusta el futbol?");
 
