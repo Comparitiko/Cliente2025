@@ -241,7 +241,10 @@ const letras = {
 
 numInput.addEventListener("keyup", (e) => {
   if (isNaN(parseInt(e.key))) {
-    if (e.key === "Backspace") return;
+    if (e.key === "Backspace") {
+      letraInput.value = "";
+      return;
+    }
     const numArr = numInput.value.split("");
     numArr[numArr.length - 1] = "";
     numInput.value = numArr.join("");
