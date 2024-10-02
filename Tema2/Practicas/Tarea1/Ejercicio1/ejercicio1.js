@@ -32,7 +32,7 @@ textoBtn.addEventListener("click", () => {
   textoBtn.style.color = color;
 });
 
-tamanios = ["x-large", "xx-large", "medium"];
+let tamanios = ["x-large", "xx-large", "medium"];
 let cambiosTamanio = 0;
 tamnioBtn.addEventListener("click", () => {
   const tamanio =
