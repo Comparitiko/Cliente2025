@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ejercicio 1</title>
+	<style>
+		*, *::before, *::after {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		.container {
+			background-color: #3f3f3f;
+			min-height: 100dvh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 20px;
+		}
+
+		button {
+			width: 10rem;
+		}
+
+		.subrayado {
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<button id="subrayado">Subrayado</button>
+		<button id="fondo">Fondo</button>
+		<button id="texto">Texto</button>
+		<button id="tamanio">Tamaño</button>
+		<script src="./ejercicio1.js"></script>
+	</div>
+</body>
+</html>

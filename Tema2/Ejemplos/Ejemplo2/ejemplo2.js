@@ -185,85 +185,96 @@
 //   document.body.appendChild(num);
 // }
 
-// // Ejercicio 1 relacion 2
+// Ejercicio 1 relacion 2
 
-// const generarTabla = (filas, columnas) => {
-//   const table = document.createElement("table");
-
-//   for (let i = 1; i <= filas; i++) {
-//     const tr = document.createElement("tr");
-//     for (let j = 1; j <= columnas; j++) {
-//       const td = document.createElement("td");
-
-//       td.innerText = `${i}, ${j}`;
-
-//       if (j % 2 === 0) td.classList.add("primo");
-
-//       tr.appendChild(td);
-//     }
-//     table.appendChild(tr);
-//   }
-
-//   document.body.appendChild(table);
-// };
-
-// generarTabla(10, 20);
-
-// Ejercicio 2 relacion 2
-const numInput = document.querySelector("#num-dni");
-const letraInput = document.querySelector("#letra-dni");
-
-const letras = {
-  0: "T",
-  1: "R",
-  2: "W",
-  3: "A",
-  4: "G",
-  5: "M",
-  6: "Y",
-  7: "F",
-  8: "P",
-  9: "D",
-  10: "X",
-  11: "B",
-  12: "N",
-  13: "J",
-  14: "Z",
-  15: "S",
-  16: "Q",
-  17: "V",
-  18: "H",
-  19: "L",
-  20: "C",
-  21: "K",
-  22: "E",
+const pedirNum = (tipo) => {
+  let num;
+  do {
+    num = parseInt(prompt(`Ingrese el numero de ${tipo}`, 5));
+  } while (isNaN(num));
+  return num;
 };
 
-numInput.addEventListener("keyup", (e) => {
-  if (isNaN(parseInt(e.key))) {
-    if (e.key === "Backspace") {
-      letraInput.value = "";
-      return;
+const generarTabla = (filas, columnas) => {
+  const table = document.querySelector("#table-pares");
+
+  console.log(table.className);
+
+  for (let i = 1; i <= filas; i++) {
+    const tr = document.createElement("tr");
+    for (let j = 1; j <= columnas; j++) {
+      const td = document.createElement("td");
+
+      td.innerText = `${i}, ${j}`;
+
+      if (j % 2 === 0) td.classList.add("primo");
+
+      tr.appendChild(td);
     }
-    const numArr = numInput.value.split("");
-    numArr[numArr.length - 1] = "";
-    numInput.value = numArr.join("");
+    table.appendChild(tr);
   }
+};
 
-  const num = numInput.value;
+const filas = pedirNum("filas");
+const columnas = pedirNum("columnas");
 
-  if (num.length < 8) {
-    letraInput.value = "";
-    return;
-  }
+generarTabla(filas, columnas);
 
-  const numArr = num.split("");
+// // Ejercicio 2 relacion 2
+// const numInput = document.querySelector("#num-dni");
+// const letraInput = document.querySelector("#letra-dni");
 
-  const sumaNums = numArr.reduce((prev, curr) => {
-    return prev + parseInt(curr);
-  });
+// const letras = {
+//   0: "T",
+//   1: "R",
+//   2: "W",
+//   3: "A",
+//   4: "G",
+//   5: "M",
+//   6: "Y",
+//   7: "F",
+//   8: "P",
+//   9: "D",
+//   10: "X",
+//   11: "B",
+//   12: "N",
+//   13: "J",
+//   14: "Z",
+//   15: "S",
+//   16: "Q",
+//   17: "V",
+//   18: "H",
+//   19: "L",
+//   20: "C",
+//   21: "K",
+//   22: "E",
+// };
 
-  const letra = letras[sumaNums % 23];
+// numInput.addEventListener("keyup", (e) => {
+//   if (isNaN(parseInt(e.key))) {
+//     if (e.key === "Backspace") {
+//       letraInput.value = "";
+//       return;
+//     }
+//     const numArr = numInput.value.split("");
+//     numArr[numArr.length - 1] = "";
+//     numInput.value = numArr.join("");
+//   }
 
-  letraInput.value = letra;
-});
+//   const num = numInput.value;
+
+//   if (num.length < 8) {
+//     letraInput.value = "";
+//     return;
+//   }
+
+//   const numArr = num.split("");
+
+//   const sumaNums = numArr.reduce((prev, curr) => {
+//     return prev + parseInt(curr);
+//   });
+
+//   const letra = letras[sumaNums % 23];
+
+//   letraInput.value = letra;
+// });
