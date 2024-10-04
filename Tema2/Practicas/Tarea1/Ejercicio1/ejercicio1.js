@@ -8,7 +8,7 @@ const $ = (selector) => document.querySelector(selector);
 const subrayadoBtn = $("#subrayado");
 const fondoBtn = $("#fondo");
 const textoBtn = $("#texto");
-const tamnioBtn = $("#tamanio");
+const tamanioBtn = $("#tamanio");
 const texto = $("#parrafo");
 
 subrayadoBtn.addEventListener("click", () =>
@@ -35,7 +35,7 @@ textoBtn.addEventListener("click", () => {
 
 let tamanios = ["x-large", "xx-large", "medium"];
 let cambiosTamanio = 0;
-tamnioBtn.addEventListener("click", () => {
+tamanioBtn.addEventListener("click", () => {
   const tamanio =
     tamanios[cambiosTamanio < 3 ? cambiosTamanio : cambiosTamanio % 3];
   cambiosTamanio++;
