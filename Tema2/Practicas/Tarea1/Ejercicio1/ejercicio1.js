@@ -9,9 +9,10 @@ const subrayadoBtn = $("#subrayado");
 const fondoBtn = $("#fondo");
 const textoBtn = $("#texto");
 const tamnioBtn = $("#tamanio");
+const texto = $("#parrafo");
 
 subrayadoBtn.addEventListener("click", () =>
-  subrayadoBtn.classList.toggle("subrayado")
+  texto.classList.toggle("subrayado")
 );
 
 const colors = ["red", "blue", "yellow"];
@@ -21,7 +22,7 @@ let cambiosFondo = 0;
 fondoBtn.addEventListener("click", () => {
   const color = colorsFondo[cambiosFondo < 4 ? cambiosFondo : cambiosFondo % 4];
   cambiosFondo++;
-  fondoBtn.style.backgroundColor = color;
+  texto.style.backgroundColor = color;
 });
 
 const colorsTexto = [...colors, "black"];
@@ -29,7 +30,7 @@ let cambiosTexto = 0;
 textoBtn.addEventListener("click", () => {
   const color = colorsTexto[cambiosTexto < 4 ? cambiosTexto : cambiosTexto % 4];
   cambiosTexto++;
-  textoBtn.style.color = color;
+  texto.style.color = color;
 });
 
 let tamanios = ["x-large", "xx-large", "medium"];
@@ -38,5 +39,5 @@ tamnioBtn.addEventListener("click", () => {
   const tamanio =
     tamanios[cambiosTamanio < 3 ? cambiosTamanio : cambiosTamanio % 3];
   cambiosTamanio++;
-  tamnioBtn.style.fontSize = tamanio;
+  texto.style.fontSize = tamanio;
 });
