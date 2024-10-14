@@ -1,4 +1,4 @@
-// 15. Cargar un String por teclado e implementar las siguientes funciones:
+// 14. Cargar un String por teclado e implementar las siguientes funciones:
 // a) Imprimir la primera mitad de los caracteres de la cadena.
 // b) Imprimir el último carácter.
 // c) Imprimirlo en forma inversa.
@@ -8,7 +8,7 @@
 const string = prompt("Ingrese el texto que quiera")
 
 const imprimirPrimeraMitad = () => {
-
+  alert(`La mitad de la palabra ${string} es ${string.split("", string.length / 2).join("")}`)
 }
 
 const imprimirUltimoCaracter = () => {
@@ -29,7 +29,13 @@ const imprimirNumeroVocales = () => {
   let numVocales = 0
   const stringMinus = string.toLowerCase()
   for (let i = 0; i < stringMinus.length; i++) {
-    if (stringMinus[i] === "a" || stringMinus[i] === "e" && stringMinus[i] === "i" && stringMinus[i] === "o" && stringMinus[i] === "u") numVocales++
+    if (stringMinus[i] === "a" || stringMinus[i] === "e" || stringMinus[i] === "i" || stringMinus[i] === "o" || stringMinus[i] === "u") numVocales++
   }
   alert(`El numero de vocales es ${numVocales}`)
 }
+
+imprimirPrimeraMitad()
+imprimirUltimoCaracter()
+imprimirInverso()
+imprimirSeparadoPorGuion()
+imprimirNumeroVocales()
