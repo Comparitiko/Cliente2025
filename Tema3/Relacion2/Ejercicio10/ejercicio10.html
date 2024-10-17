@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Hola mundo</h1>
+  <h2>Esto es un h2</h2>
+  <p>Un parrafaco</p>
+  <div>
+    <h4>H4 dentro de un div</h4>
+    <h1>Esto es un h1 dentro del mismo div</h1>
+  </div>
+<script>
+  const elementos = document.querySelectorAll("*")
+  elementos.forEach(elemento => {
+    console.log(elemento.tagName)
+    const numOfThisEl = document.querySelector(`#num${elemento.tagName}`)
+    if (numOfThisEl) {
+      const number = parseInt(numOfThisEl.innerText)
+      numOfThisEl.innerText = number + 1
+      return
+    }
+    const tagName = document.createElement("h1")
+    const numbersOfTags = document.createElement("span")
+    numbersOfTags.id = `num${elemento.tagName}`
+    tagName.innerText = elemento.tagName
+    numbersOfTags.innerText = 1;
+    document.body.appendChild(tagName)
+    document.body.appendChild(numbersOfTags)
+  })
+</script>
+</body>
+</html>

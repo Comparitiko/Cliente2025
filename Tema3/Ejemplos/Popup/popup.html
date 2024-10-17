@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Popup</title>
+</head>
+<body>
+  <input type="text" id="nombre">
+  <input type="color" id="color">
+  <button onclick="openWindow()">Abrir ventana</button>
+  <button onclick="cerrarVentana()">Cerrar Ventana</button>
+  <script>
+    let ventana
+    const openWindow = () => {
+      ventana = window.open("", "Mi window", "width=400, height=600")
+
+      const nombre = document.querySelector("#nombre").value
+
+      const tituloWindow = ventana.document.createElement("h1")
+      tituloWindow.innerText = `Bienvenido a mi página ${nombre}`
+      ventana.document.body.appendChild(tituloWindow)
+
+      const colorPicker = ventana.document.createElement("input")
+      const buttonCerrarWindow = ventana.document.createElement("button")
+
+      buttonCerrarWindow.innerText = "Cerrar Ventana";
+      buttonCerrarWindow.addEventListener("click", cerrarVentana)
+
+      colorPicker.type = "color"
+      colorPicker.id = "color"
+
+      ventana.document.body.appendChild(colorPicker)
+      ventana.document.body.appendChild(buttonCerrarWindow)
+
+      ventana.document.querySelector("#color").addEventListener("change", () => {
+        const inputColor = ventana.document.querySelector("#color")
+        ventana.document.body.style.backgroundColor = inputColor.value
+      })
+    }
+
+    const cerrarVentana = () => {
+      ventana.close()
+    }
+  </script>
+</body>
+</html>

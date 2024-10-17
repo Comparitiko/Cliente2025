@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+  <style>
+    *, *::before, *::before {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      height: 100dvh;
+      width: 100dvw;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    section {
+      height: 300px;
+      width: 300px;
+      border-radius: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .red {
+      background-color: red;
+    }
+
+    .yellow {
+      background-color: yellow;
+    }
+
+    .green {
+      background-color: green;
+    }
+
+    .orange {
+      background-color: orange;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section onmouseout="resetColor(this)" onmouseover="cambiarColor(this)" class="red"></section>
+    <section onmouseout="resetColor(this)" onmouseover="cambiarColor(this)" class="yellow"></section>
+    <section onmouseout="resetColor(this)" onmouseover="cambiarColor(this)" class="green"></section>
+    <section onmouseout="resetColor(this)" onmouseover="cambiarColor(this)" class="orange"></section>
+  </div>
+  <script>
+    const container = document.querySelector(".container")
+
+    const resetColor = (el) => {
+      container.style.backgroundColor = ""
+      el.style.backgroundImage = ""
+    }
+
+    const cambiarColor = (el) => {
+      container.style.backgroundColor = el.className
+      el.style.backgroundImage =
+        "url(data:image/png;base64,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)"
+
+    }
+  </script>
+</body>
+</html>

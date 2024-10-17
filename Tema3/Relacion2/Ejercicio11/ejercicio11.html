@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+
+  const $create = (tag) => document.createElement(tag)
+
+  const crearCabecera = (table) => {
+    const tr = $create("tr")
+
+    const th1 = $create("th")
+    const th2 = $create("th")
+    th1.innerText = "Columna 1"
+    th2.innerText = "Columna 2"
+
+    tr.appendChild(th1)
+    tr.appendChild(th2)
+    table.appendChild(tr)
+  }
+
+  const crearCuerpo = (table) => {
+    for (let i = 0; i < 2; i++) {
+      const tr = $create("tr")
+      const td1 = $create("td")
+      const td2 = $create("td")
+      td1.innerText = `Row ${i + 1}`
+      td2.innerText = `Row ${i + 1}`
+      tr.appendChild(td1)
+      tr.appendChild(td2)
+      table.appendChild(tr)
+    }
+  }
+
+  const table = $create("table")
+  crearCabecera(table)
+  crearCuerpo(table)
+  document.body.appendChild(table)
+</script>
