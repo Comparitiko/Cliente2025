@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #3f3f3f;
+      max-width: 100dvw;
+      min-height: 100dvh;
+      padding: 1rem;
+    }
+
+    table {
+      margin: 0 auto;
+      width: 50%;
+      height: 50%;
+      text-align: center;
+      border-collapse: collapse;
+    }
+
+    table, tr, td {
+      border: 2px solid black;
+    }
+
+  </style>
+</head>
+<body>
+  <script>
+    const $create = (elTag) => document.createElement(elTag)
+
+    const esPrimo = (num) => {
+      if (num === 1) return true
+      if (num === 2) return false
+      for (let i = 2; i < num; i++) {
+        if (num % i === 0) return false
+      }
+      return true
+    }
+
+    const construyeTabla = (filas, columnas) => {
+      const table = $create("table")
+
+      let num = 1
+      for (let i = 0; i < filas; i++) {
+        const tr = $create("tr")
+        for (let j = 0; j < columnas; j++) {
+          const td = $create("td")
+          td.innerText = num
+          td.style.backgroundColor = esPrimo(num) ? "green" : "yellow"
+          tr.appendChild(td)
+          num++
+        }
+        table.appendChild(tr)
+      }
+
+      document.body.appendChild(table)
+    }
+
+    const filas = parseInt(prompt("Ingrese el numero de filas"))
+    const columnas = parseInt(prompt("Ingrese el numero de columnas"))
+    construyeTabla(filas, columnas)
+  </script>
+</body>
+</html>

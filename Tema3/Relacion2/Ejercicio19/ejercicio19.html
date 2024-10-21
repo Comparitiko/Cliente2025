@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      min-height: 100dvh;
+      max-width: 100dvw;
+    }
+
+    section {
+      height: 100dvh;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    section div {
+      width: 300px;
+      height: 300px;
+    }
+
+    .default {
+      background-color: #3f3f3f;
+    }
+
+    .red {
+      background-color: red;
+    }
+
+    .yellow {
+      background-color: yellow;
+    }
+
+    .orange {
+      background-color: orange;
+    }
+
+    .blue {
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div class="container default">
+    <section>
+      <div class="red" onmouseout="removeBg()" onmouseover="changeBg(this)"></div>
+      <div class="yellow" onmouseout="removeBg()" onmouseover="changeBg(this)"></div>
+      <div class="orange" onmouseout="removeBg()" onmouseover="changeBg(this)"></div>
+      <div class="blue" onmouseout="removeBg()" onmouseover="changeBg(this)"></div>
+    </section>
+  </div>
+<script>
+  const $ = (selector) => document.querySelector(selector)
+
+  const container = $(".container")
+
+  function removeBg() {
+    container.className = "container default"
+  }
+
+  function changeBg(el) {
+    container.className = `container ${el.className}`
+  }
+
+
+
+</script>
+</body>
+</html>

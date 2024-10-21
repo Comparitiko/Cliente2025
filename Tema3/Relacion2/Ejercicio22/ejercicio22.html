@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .container {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+    img {
+      border: 1px solid black;
+    }
+    button {
+      padding: .2rem .7rem;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <picture>
+    <img id="img-dado" src="./imagenes/dado01.png" alt="dado01">
+  </picture>
+  <button id="btn-dado">Lanzar dado</button>
+  <audio id="audio-dado" src="./sonidos/dado.mp3"></audio>
+</div>
+
+<script>
+  const dirImages = "./imagenes"
+  const images = ["dado01.png", "dado02.png", "dado03.png", "dado04.png", "dado05.png", "dado06.png"]
+
+  const btnDado = document.querySelector("#btn-dado")
+  const imgDado = document.querySelector("#img-dado")
+  const audioDado = document.querySelector("audio")
+
+  btnDado.addEventListener("click", () => {
+    audioDado.currentTime = 0
+    audioDado.play()
+    setTimeout(() => {
+      imgDado.src = `${dirImages}/${images[Math.floor(Math.random() * 6)]}`
+      imgDado.alt = images[Math.floor(Math.random() * 6)]
+    }, 500)
+  })
+
+</script>
+</body>
+</html>
