@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formulario</title>
+  <style>
+    .error {
+      border: 2px solid red;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      background-color: #f5f5f5;
+      width: 25%;
+      margin: 0 auto;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      padding: 20px;
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    select:focus {
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <form action="">
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre">
+    <label for="apellido">Apellido</label>
+    <input type="text" id="apellido">
+    <label for="edad">Edad</label>
+    <input type="number" id="edad">
+    <label for="matricula">Matricula</label>
+    <input type="text" id="matricula">
+    <label for="provincia"></label>
+    <select id="provincia">
+      <option value="sel">Seleccione provincia</option>
+      <option value="almeria">Almeria</option>
+      <option value="granada">Granada</option>
+      <option value="alicante">Alicante</option>
+    </select>
+    <input type="submit" value="Enviar" id="enviar">
+  </form>
+  <script src="./form.js"></script>
+</body>
+</html>

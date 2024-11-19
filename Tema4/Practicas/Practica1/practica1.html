@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Practica 1</title>
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      padding: 10px;
+      min-height: 100dvh;
+      max-width: 100dvw;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    table, th, tr, td {
+      border: 2px solid black;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 75%;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tablas de temperaturas</h1>
+  <hr>
+  <table id="tabla-temps">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Enero</th>
+        <th>Febrero</th>
+        <th>Marzo</th>
+        <th>Abril</th>
+        <th>Media</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+  <hr>
+  <h2 id="tmp-alta-marzo"></h2>
+  <h2 id="tmp-media-abril"></h2>
+  <h2 id="poblacion-media-menor"></h2>
+  <hr>
+<script src="./practica1.js"></script>
+</body>
+</html>
