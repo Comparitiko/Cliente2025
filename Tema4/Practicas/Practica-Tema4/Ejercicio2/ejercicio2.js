@@ -59,12 +59,14 @@ class Identidad {
 
     const sumaNums = numsDNI.reduce((prev, curr) => prev + curr)
 
+    console.log(sumaNums)
+
     return this.#letras[sumaNums > 23 ? sumaNums % 23 : sumaNums]
   }
 }
 
 // const dniSinLetra = prompt("Introduce tu DNI sin letra")
-const dniSinLetra = "12345671"
+const dniSinLetra = "24461117"
 const dniConLetra = Identidad.generarLetra(dniSinLetra)
 
 const isCorrect = Identidad.comprobarDNI(dniConLetra)

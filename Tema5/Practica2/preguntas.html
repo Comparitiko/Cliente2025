@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+  <title>Creación de preguntas | Travial IES Jaroso</title>
+</head>
+<body>
+<div class="container">
+  <header id="cabecera">
+    <h1 id="title">Travial IES Jaroso</h1>
+  </header>
+  <main>
+    <form id="form-preguntas">
+      <fieldset>
+        <legend>Añada la pregunta</legend>
+        <div class="form-control-preguntas">
+          <label for="categoria">Pregunta de categoria:</label>
+          <select name="categoria" id="categoria">
+            <option value="historia">Historia</option>
+            <option value="geografia">Geografía</option>
+            <option value="espectaculos">Espectaculos</option>
+            <option value="ciencia-tecnologia">Ciencia y Tecnología</option>
+            <option value="miscelanea">Miscelanea</option>
+            <option value="cultura">Cultura</option>
+          </select>
+        </div>
+        <label for="pregunta"></label>
+        <textarea id="pregunta">Ingrese la pregunta</textarea>
+        <div class="form-control-preguntas">
+          <label for="respuesta-1">Respuesta 1</label>
+          <input type="text" id="respuesta-1">
+          <label for="resp-1-check"></label>
+          <input type="radio" name="resp-correcta" id="resp-1-check">
+        </div>
+        <div class="form-control-preguntas">
+          <label for="respuesta-2">Respuesta 2</label>
+          <input type="text" id="respuesta-2">
+          <label for="resp-2-check"></label>
+          <input type="radio" name="resp-correcta" id="resp-2-check">
+        </div>
+        <div class="form-control-preguntas">
+          <label for="respuesta-3">Respuesta 3</label>
+          <input type="text" id="respuesta-3">
+          <label for="resp-3-check"></label>
+          <input type="radio" name="resp-correcta" id="resp-3-check">
+        </div>
+        <div class="form-control-preguntas">
+          <label for="respuesta-4">Respuesta 4</label>
+          <input type="text" id="respuesta-4">
+          <label for="resp-4-check"></label>
+          <input type="radio" name="resp-correcta" id="resp-4-check">
+        </div>
+        <div>
+          <input type="submit" value="Enviar">
+          <input type="reset" value="Borrar">
+        </div>
+      </fieldset>
+    </form>
+  </main>
+</div>
+<script type="module" src="./assets/js/preguntas.js"></script>
+</body>
+</html>

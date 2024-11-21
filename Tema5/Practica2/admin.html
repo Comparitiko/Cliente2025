@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+  <title>Panel de administrador | Travial IES Jaroso</title>
+</head>
+<body>
+<div class="container">
+  <header id="cabecera">
+    <h1 id="title">Travial IES Jaroso</h1>
+  </header>
+  <main>
+    <form id="admin-form">
+      <div class="form-control">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre">
+        <p class="error-info" id="nombre-error"></p>
+      </div>
+      <div class="form-control">
+        <label for="apellidos">Apellidos</label>
+        <input type="text" id="apellidos" name="apellidos">
+        <p class="error-info" id="apellidos-error"></p>
+      </div>
+      <div class="form-control">
+        <label for="contrasenia">Contraseña</label>
+        <input type="password" id="contrasenia" name="contrasenia">
+        <p class="error-info" id="contrasenia-error"></p>
+      </div>
+      <div class="form-control">
+        <label for="rep-contrasenia">Repetir contraseña</label>
+        <input type="password" id="rep-contrasenia" name="rep-contrasenia">
+        <p class="error-info" id="rep-contrasenia-error"></p>
+      </div>
+      <div class="form-control">
+        <label for="fecha-nac">Fecha de nacimiento</label>
+        <input type="text" id="fecha-nac" name="fecha-nac">
+        <p class="error-info" id="fecha-nac-error"></p>
+      </div>
+      <div class="form-btns">
+        <input type="reset" value="Limpiar formulario">
+        <input type="submit" value="Enviar">
+      </div>
+    </form>
+  </main>
+</div>
+<script type="module" src="./assets/js/admin.js"></script>
+</body>
+</html>
