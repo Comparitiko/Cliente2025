@@ -79,7 +79,7 @@ input.error {
 }
 
 #form-preguntas {
-  width: 60%;
+  width: 40%;
   margin: 2rem auto;
 }
 
@@ -101,6 +101,8 @@ input.error {
 textarea {
   padding: 5px;
   resize: none;
+  width: 50%;
+  height: 3rem;
 }
 
 .form-control-preguntas > input:focus {
