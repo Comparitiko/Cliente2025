@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+  <style>
+    table, tr, th, td {
+      border: 1px solid black;
+      text-align: center;
+    }
+
+    table {
+      width: 50%;
+      margin-inline: auto;
+      border-collapse: collapse;
+      margin-bottom: 100px;
+    }
+
+    form {
+      margin-inline: auto;
+      width: 75%;
+    }
+
+    form > div {
+      margin-inline: auto;
+      width: 33%;
+      display: grid;
+    }
+  </style>
+</head>
+<body>
+<table>
+  <tr>
+    <th>Campo 1</th>
+    <th>Campo 2</th>
+    <th>Campo 3</th>
+    <th>Acciones</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+    <td>
+      <button name="add">+</button>
+      <button name="remove">-</button>
+    </td>
+  </tr>
+</table>
+<form action="">
+  <div>
+    <label for="celda1">Celda 1</label>
+    <input id="celda1" value="0" type="number">
+  </div>
+  <div>
+    <label for="celda2">Celda 2</label>
+    <input id="celda2" value="0" type="number">
+  </div>
+  <div>
+    <label for="celda3">Celda 3</label>
+    <input id="celda3" value="0" type="number">
+  </div>
+</form>
+<script src="./tabla.js"></script>
+</body>
+</html>

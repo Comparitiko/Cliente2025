@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      max-width: 100vw;
+    }
+
+    #tablero {
+      border: 1px solid black;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(8, 1fr);
+    }
+
+    .celda {
+      width: 75px;
+      height: 75px;
+      border: 2px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3.5em;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+<main>
+  <div id="tablero"></div>
+</main>
+<script src="./ajedrez.js"></script>
+</body>
+</html>
