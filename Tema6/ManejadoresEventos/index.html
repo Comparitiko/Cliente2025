@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manejadores Eventos</title>
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    p {
+      transition: all .5s;
+    }
+
+    .resaltado {
+      background-color: green;
+      color: white;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Manejadores Eventos</h1>
+  <div id="parrafos">
+    <p>Parrafo 1</p>
+    <p>Parrafo 2</p>
+    <p>Parrafo 3</p>
+    <p>Parrafo 4</p>
+    <p>Parrafo 5</p>
+  </div>
+  <button id="contar">Contar parrafos</button>
+</div>
+<script src="./script.js"></script>
+</body>
+</html>
